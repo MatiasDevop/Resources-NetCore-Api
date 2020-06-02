@@ -4,10 +4,10 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 
-namespace Tweetbook.Contracts.V1.Response
+namespace Tweetbook.Contracts.V1.Requests
 {
-    public class PostResponse
+    public class UpdatePostRequest
     {
-        public Guid Id { get; set; }
+        public string Name { get; set; }
     }
 }
