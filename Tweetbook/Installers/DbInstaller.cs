@@ -20,7 +20,8 @@ namespace Tweetbook.Installers
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<DataContext>();
 
-            services.AddSingleton<IPostService, PostService>();
+            services.AddScoped<IPostService, PostService>();
+            //services.AddSingleton<IPostService, CosmosPostService>();// it's if you wanna learn to use cosmosDB
         }
     }
 }
