@@ -11,6 +11,7 @@ using Tweetbook.Contracts;
 using Tweetbook.Contracts.V1.Requests;
 using Tweetbook.Contracts.V1.Response;
 using Tweetbook.Domain;
+using Tweetbook.Extensions;
 using Tweetbook.Services;
 
 namespace Tweetbook.Controllers
@@ -47,12 +48,22 @@ namespace Tweetbook.Controllers
         [HttpPut(ApiRoutes.Posts.Update)]
         public async Task<IActionResult> Update([FromRoute]Guid postId, UpdatePostRequest request)
         {
-            var post = new Post
-            {
-                Id= postId,
-                Name = request.Name
-            };
+            var userOnwsPost = await _postService.UserOwnsPostAsync(postId, HttpContext.GetUserId());
 
+            if (!userOnwsPost)
+            {
+                return BadRequest(new { error = "You do not own this post"});
+            }
+            //refactorin this
+            //var post = new Post
+            //{
+            //    Id= postId,
+            //    Name = request.Name
+            //};
+            //to this
+            var post = await _postService.GetPostByIdAsync(postId);
+            post.Name = request.Name;
+           
             var updated = await _postService.UpdatePostAsync(post);
             
             if (updated)
@@ -66,6 +77,13 @@ namespace Tweetbook.Controllers
         [HttpDelete(ApiRoutes.Posts.Delete)]
         public async Task<IActionResult> Delete([FromRoute]Guid postId)
         {
+            var userOnwsPost = await _postService.UserOwnsPostAsync(postId, HttpContext.GetUserId());
+
+            if (!userOnwsPost)
+            {
+                return BadRequest(new { error = "You do not own this post" });
+            } 
+
             var deleted = await _postService.DeletePostAsync(postId);
 
             if (deleted)
@@ -77,7 +95,11 @@ namespace Tweetbook.Controllers
         public async Task<IActionResult> Create([FromBody] CreatePostRequest postRequest)
         {
 
-            var post = new Post { Name = postRequest.Name }; 
+            var post = new Post
+            { 
+                Name = postRequest.Name,
+                UserId = HttpContext.GetUserId()
+            }; 
             if (post.Id != Guid.Empty)
             {
                 post.Id = Guid.NewGuid();
