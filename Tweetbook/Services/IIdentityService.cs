@@ -10,5 +10,6 @@ namespace Tweetbook.Services
     {
         Task<AuthenticationResult> RegisterAsync(string email, string password);
         Task<AuthenticationResult> LoginAsync(string requestEmail, string requestPassword);
+        Task<AuthenticationResult> RefreshTokenAsync(string token, string refreshToken);
     }
 }
