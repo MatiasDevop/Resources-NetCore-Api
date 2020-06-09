@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KIEB59gtwamYnRv7V70BLv3zdZZR1mbPrPpRH8gvc8KpDP0Ccf6OdiM3ZIB9qFLd3EpbO7c45yDD7W3owBIMnQ==",
+  "dgSpecHash": "gEclSyoH5ea6qIQMcMX+juf14tXgmHMpeNPEXfzmvbR/eoItIusWxVKd+SN42107h2Xn7jtfqXvJrymv4JBucw==",
   "success": true,
   "projectFilePath": "D:\\NET Development\\Tweetbook\\Tweetbook\\Tweetbook.csproj",
   "expectedPackageFiles": [
@@ -50,6 +50,7 @@
     "C:\\Users\\nestdev\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\nestdev\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\nestdev\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
+    "C:\\Users\\nestdev\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512",
     "C:\\Users\\nestdev\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\nestdev\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\nestdev\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
