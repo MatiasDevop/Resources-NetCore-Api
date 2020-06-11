@@ -73,9 +73,9 @@ namespace Tweetbook.Installers
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey
                 });
-                x.AddSecurityRequirement(new OpenApiSecurityRequirement {
-                   {
-                     new OpenApiSecurityScheme
+                x.AddSecurityRequirement(new OpenApiSecurityRequirement 
+                {
+                   {new OpenApiSecurityScheme
                      {
                        Reference = new OpenApiReference
                        {
@@ -83,8 +83,7 @@ namespace Tweetbook.Installers
                          Id = "Bearer"
                        }
                       },
-                      new string[] { }
-                    }
+                      new List<string>()}
                 });
             });
         }

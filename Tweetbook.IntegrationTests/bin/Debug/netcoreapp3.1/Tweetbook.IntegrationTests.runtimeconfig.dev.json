@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\nestdev\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\nestdev\\.nuget\\packages"
+    ]
+  }
+}

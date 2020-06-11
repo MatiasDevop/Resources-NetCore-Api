@@ -70,6 +70,9 @@ D:\NET Development\Tweetbook\Tweetbook\bin\Debug\netcoreapp3.1\runtimes\win-x86\
 D:\NET Development\Tweetbook\Tweetbook\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\NET Development\Tweetbook\Tweetbook\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\NET Development\Tweetbook\Tweetbook\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.csproj.CoreCompileInputs.cache
+D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.MvcApplicationPartsAssemblyInfo.cs
+D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.MvcApplicationPartsAssemblyInfo.cache
 D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.AssemblyInfoInputs.cache
 D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.AssemblyInfo.cs
 D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.RazorTargetAssemblyInfo.cache
@@ -79,4 +82,3 @@ D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\staticwebassets\T
 D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.dll
 D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.pdb
 D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.genruntimeconfig.cache
-D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.csprojAssemblyReference.cache
