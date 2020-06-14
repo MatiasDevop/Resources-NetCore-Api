@@ -7,13 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Data\Migrations\20200608113420_Added_RefreshTokens.cs" />
-    <Compile Remove="Data\Migrations\20200608113420_Added_RefreshTokens.Designer.cs" />
-    <Compile Remove="Data\Migrations\20200608113533_Added_RefreshTokens.cs" />
-    <Compile Remove="Data\Migrations\20200608113533_Added_RefreshTokens.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Cosmonaut" Version="2.11.3" />
     <PackageReference Include="Cosmonaut.Extensions.Microsoft.DependencyInjection" Version="2.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.4" />

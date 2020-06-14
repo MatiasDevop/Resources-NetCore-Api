@@ -29,8 +29,6 @@ namespace Tweetbook.Installers
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
 
             //start set up jwt
-
-            
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
@@ -44,18 +42,26 @@ namespace Tweetbook.Installers
             services.AddSingleton(tokenValidationParameters);
 
             services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(x =>
-            {
-                x.SaveToken = true;
-                x.TokenValidationParameters = tokenValidationParameters;
-            });//end set up jwt
+                {
+                    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(x =>
+                {
+                    x.SaveToken = true;
+                    x.TokenValidationParameters = tokenValidationParameters;
+                });//end set up jwt
 
-          
+            //authorizaition on claims only if the user has this Claim he can actually access
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("TagViewer", builder => 
+                {   //here you can add more Claoims
+                    builder.RequireClaim("tags.view", "true");
+                });
+            });
+
             services.AddSwaggerGen(x =>
             {
                 x.SwaggerDoc("v1", new OpenApiInfo { Title = "Tweetbook API", Version = "v1" });

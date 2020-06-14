@@ -82,3 +82,4 @@ D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\staticwebassets\T
 D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.dll
 D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.pdb
 D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.genruntimeconfig.cache
+D:\NET Development\Tweetbook\Tweetbook\obj\Debug\netcoreapp3.1\Tweetbook.csprojAssemblyReference.cache
