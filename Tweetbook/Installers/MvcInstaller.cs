@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tweetbook.Authorization;
 using Tweetbook.Options;
 using Tweetbook.Services;
 
@@ -53,14 +55,27 @@ namespace Tweetbook.Installers
                     x.TokenValidationParameters = tokenValidationParameters;
                 });//end set up jwt
 
-            //authorizaition on claims only if the user has this Claim he can actually access
-            services.AddAuthorization(options =>
+            //Add Polices for Account and Domain especific
+            services.AddAuthorization(options => 
             {
-                options.AddPolicy("TagViewer", builder => 
-                {   //here you can add more Claoims
-                    builder.RequireClaim("tags.view", "true");
+                options.AddPolicy("MustWorkForChapsas", policy =>
+                {
+                    // you can also add new requirement as roles and soonpolicy.RequireRole
+                    policy.AddRequirements(new WorksForCompanyRequirement("chapsas.com"));
                 });
             });
+
+            services.AddSingleton<IAuthorizationHandler, WorksForCompanyHandler>();
+            // en policy by email.com domain
+
+            //authorizaition on claims only if the user has this Claim he can actually access
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("TagViewer", builder => 
+            //    {   //here you can add more Claoims
+            //        builder.RequireClaim("tags.view", "true");
+            //    });
+            //});
 
             services.AddSwaggerGen(x =>
             {

@@ -135,6 +135,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Cosmonaut": {
               "target": "Package",
               "version": "[2.11.3, )"

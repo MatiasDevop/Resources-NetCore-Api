@@ -28,6 +28,13 @@ namespace Tweetbook.Contracts
         public static class Tags
         {
             public const string GetAll = Base + "/tags";
+
+            public const string Create = Base + "/tags";
+
+            public const string Get = Base + "/tags/{tagName}";
+
+            public const string Delete = Base + "/tags/{tagName}";
+
         }
         public static class Identity
         {

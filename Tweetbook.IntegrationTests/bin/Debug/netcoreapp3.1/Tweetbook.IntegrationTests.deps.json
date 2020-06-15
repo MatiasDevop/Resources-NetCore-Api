@@ -288,6 +288,21 @@
           "Tweetbook.IntegrationTests.dll": {}
         }
       },
+      "AutoMapper/9.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
       "Cosmonaut/2.11.3": {
         "dependencies": {
           "Humanizer.Core.uk": "2.5.16",
@@ -2815,6 +2830,7 @@
       },
       "Tweetbook/1.0.0": {
         "dependencies": {
+          "AutoMapper": "9.0.0",
           "Cosmonaut": "2.11.3",
           "Cosmonaut.Extensions.Microsoft.DependencyInjection": "2.3.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.4",
@@ -4315,6 +4331,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xCqvoxT4HIrNY/xlXG9W+BA/awdrhWvMTKTK/igkGSRbhOhpl3Q8O8Gxlhzjc9JsYqE7sS6AxgyuUUvZ6R5/Bw==",
+      "path": "automapper/9.0.0",
+      "hashPath": "automapper.9.0.0.nupkg.sha512"
     },
     "Cosmonaut/2.11.3": {
       "type": "package",
