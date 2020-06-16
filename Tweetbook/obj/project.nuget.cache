@@ -1,12 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "hkrjb7G5s3YtO+pxgnKY3Qn+FOXzLoHnTZyZwLxrD2Gz1U0bn8AVKqb8BrTbC8Lu0mEklkYf0m4oPfCxoa6ctw==",
+  "dgSpecHash": "EaaLDwDDIOmKLh3HJxjvLHl3qRukdSFrekLLBSZcz7BOIXtlX0nozD3bvyWj9PqqIM+RBFuMz+/twCOibQa/Fg==",
   "success": true,
   "projectFilePath": "D:\\NET Development\\Tweetbook\\Tweetbook\\Tweetbook.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nestdev\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
+    "C:\\Users\\nestdev\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\nestdev\\.nuget\\packages\\cosmonaut\\2.11.3\\cosmonaut.2.11.3.nupkg.sha512",
     "C:\\Users\\nestdev\\.nuget\\packages\\cosmonaut.extensions.microsoft.dependencyinjection\\2.3.0\\cosmonaut.extensions.microsoft.dependencyinjection.2.3.0.nupkg.sha512",
+    "C:\\Users\\nestdev\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
+    "C:\\Users\\nestdev\\.nuget\\packages\\fluentvalidation.aspnetcore\\8.6.2\\fluentvalidation.aspnetcore.8.6.2.nupkg.sha512",
+    "C:\\Users\\nestdev\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\8.6.2\\fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512",
     "C:\\Users\\nestdev\\.nuget\\packages\\humanizer.core\\2.5.16\\humanizer.core.2.5.16.nupkg.sha512",
     "C:\\Users\\nestdev\\.nuget\\packages\\humanizer.core.uk\\2.5.16\\humanizer.core.uk.2.5.16.nupkg.sha512",
     "C:\\Users\\nestdev\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.4\\microsoft.aspnetcore.authentication.jwtbearer.3.1.4.nupkg.sha512",

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,16 +21,27 @@ namespace Tweetbook.Controllers
     public class PostsController : Controller
     {
         private readonly IPostService _postService;
+        private readonly IMapper _mapper;
 
-        public PostsController(IPostService postService)
+        public PostsController(IPostService postService, IMapper mapper)
         {
             _postService = postService;
+            _mapper = mapper;
         }
 
         [HttpGet(ApiRoutes.Posts.GetAll)]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _postService.GetPostsAsync());
+            var posts = await _postService.GetPostsAsync();
+            // we're gonna refactoring this using mappers
+            //var postResponses = posts.Select(post => new PostResponse
+            //{
+            //    Id = post.Id,
+            //    Name = post.Name,
+            //    UserId = post.UserId,
+            //    Tags = post.Tags.Select(x => new TagResponse { Name = x.TagName }).ToList()
+            //}).ToList();
+            return Ok(_mapper.Map<List<PostResponse>>(posts));
         }
 
         [HttpGet(ApiRoutes.Posts.Get)]
@@ -42,7 +54,14 @@ namespace Tweetbook.Controllers
                 return NotFound();
             }
 
-            return Ok(post);
+            //here the same we use mappers
+            //return Ok(new PostResponse
+            //{
+            //    Id = post.Id,
+            //    Name = post.Name,
+            //    Tags = post.Tags.Select(x => new TagResponse { Name = x.TagName })
+            //});
+            return Ok(_mapper.Map<PostResponse>(post));
         }
 
         [HttpPut(ApiRoutes.Posts.Update)]
@@ -68,7 +87,7 @@ namespace Tweetbook.Controllers
             
             if (updated)
             {
-                return Ok(post);
+                return Ok(_mapper.Map<PostResponse>(post));
             }
 
             return NotFound();
@@ -94,6 +113,7 @@ namespace Tweetbook.Controllers
         [HttpPost(ApiRoutes.Posts.Create)]
         public async Task<IActionResult> Create([FromBody] CreatePostRequest postRequest)
         {
+            // to validate we dont need ModelSate.valid we can custimize our own validators filters
             // added a new properties tags list
               var newPostId = Guid.NewGuid();
               var post = new Post
@@ -109,8 +129,14 @@ namespace Tweetbook.Controllers
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
             var locationUri = baseUrl + "/" + ApiRoutes.Posts.Get.Replace("{postId}", post.Id.ToString());
 
-            var response = new PostResponse { Id = post.Id };
-            return Created(locationUri, response);
+            //var response = new PostResponse 
+            //{ 
+            //    Id = post.Id,
+            //    Name = post.Name,
+            //    UserId = post.UserId,
+            //    Tags = post.Tags.Select(x => new TagResponse { Name = x.TagName })
+            //}; refactoring this using mappers
+            return Created(locationUri, _mapper.Map<PostResponse>(post));
         }
     }
 }

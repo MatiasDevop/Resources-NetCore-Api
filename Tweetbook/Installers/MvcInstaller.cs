@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 using Tweetbook.Authorization;
 using Tweetbook.Options;
 using Tweetbook.Services;
+using Tweetbook.Filters;
 
 namespace Tweetbook.Installers
 {
@@ -28,7 +30,13 @@ namespace Tweetbook.Installers
             //DI
             services.AddScoped<IIdentityService, IdentityService>();
             // from Startup
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
+            services     
+                .AddMvc( options => 
+                {
+                    options.Filters.Add<ValidationFilter>();
+                })
+                .AddFluentValidation(mvcConfigguration => mvcConfigguration.RegisterValidatorsFromAssemblyContaining<Startup>()) //add this for our validations
+                .SetCompatibilityVersion(CompatibilityVersion.Latest);
 
             //start set up jwt
             var tokenValidationParameters = new TokenValidationParameters

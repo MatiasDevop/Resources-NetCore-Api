@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Tweetbook.Contracts;
 using Tweetbook.Contracts.V1.Requests;
+using Tweetbook.Contracts.V1.Response;
 using Tweetbook.Domain;
 using Tweetbook.Extensions;
 using Tweetbook.Services;
@@ -18,19 +19,21 @@ namespace Tweetbook.Controllers.V1
     public class TagsController : Controller
     {
         private readonly IPostService _postService;
-        //private readonly IMapper _mapper;
+        private readonly IMapper _mapper;
 
-        public TagsController(IPostService postService)
+        public TagsController(IPostService postService, IMapper mapper)
         {
             _postService = postService;
-           // _mapper = mapper;
+            _mapper = mapper;
         }
 
         [HttpGet(ApiRoutes.Tags.GetAll)]
         //[Authorize(Policy = "TagViewer")] //Require this policy to access we did it on MVCINtaller
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _postService.GetAllTagsAsync());
+            var tags = await _postService.GetAllTagsAsync();
+           // var tagResponses = tags.Select(tag => new TagResponse { Name = tag.Name }).ToList();refactoring with mapper
+            return Ok(_mapper.Map<List<TagResponse>>(tags));
         }
 
         [HttpGet(ApiRoutes.Tags.Get)]
@@ -43,7 +46,7 @@ namespace Tweetbook.Controllers.V1
                 return NotFound();
             }
 
-            return Ok(tag);
+            return Ok(_mapper.Map<TagResponse>(tag));
         }
 
         [HttpPost(ApiRoutes.Tags.Create)]
@@ -65,7 +68,7 @@ namespace Tweetbook.Controllers.V1
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
             var locationUri = baseUrl + "/" + ApiRoutes.Posts.Get.Replace("{tagName}", newTag.Name);
 
-            return Created(locationUri, newTag);
+            return Created(locationUri, _mapper.Map<TagResponse>(newTag));
         }
 
         [HttpDelete(ApiRoutes.Tags.Delete)]

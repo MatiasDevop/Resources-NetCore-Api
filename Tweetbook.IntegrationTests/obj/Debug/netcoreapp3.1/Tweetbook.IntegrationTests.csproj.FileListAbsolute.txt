@@ -432,3 +432,4 @@ D:\NET Development\Tweetbook\Tweetbook.IntegrationTests\obj\Debug\netcoreapp3.1\
 D:\NET Development\Tweetbook\Tweetbook.IntegrationTests\obj\Debug\netcoreapp3.1\Tweetbook.IntegrationTests.dll
 D:\NET Development\Tweetbook\Tweetbook.IntegrationTests\obj\Debug\netcoreapp3.1\Tweetbook.IntegrationTests.pdb
 D:\NET Development\Tweetbook\Tweetbook.IntegrationTests\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\NET Development\Tweetbook\Tweetbook.IntegrationTests\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
