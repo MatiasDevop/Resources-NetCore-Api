@@ -31,7 +31,7 @@ namespace Tweetbook.Installers
             services.AddScoped<IIdentityService, IdentityService>();
             // from Startup
             services     
-                .AddMvc( options => 
+                .AddMvcCore( options => 
                 {
                     options.Filters.Add<ValidationFilter>();
                 })

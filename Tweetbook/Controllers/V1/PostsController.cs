@@ -32,6 +32,7 @@ namespace Tweetbook.Controllers
         [HttpGet(ApiRoutes.Posts.GetAll)]
         public async Task<IActionResult> GetAll()
         {
+
             var posts = await _postService.GetPostsAsync();
             // we're gonna refactoring this using mappers
             //var postResponses = posts.Select(post => new PostResponse
